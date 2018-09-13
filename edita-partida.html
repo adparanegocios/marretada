@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Edi&ccedil;&atilde;o de Partida</title>
+
+<script language="javascript" src ="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.click-calendario-1.0-min.js"></script>
+<script language="javascript" src="js/jquery.maskMoney.js"></script>
+<script language="javascript" src="js/edita-partida.js"></script>
+
+<script type="text/javascript">
+$(function(){
+ $("#valor").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ })
+ 
+function limitaTextarea(valor) {
+	quant = 250; /* Total de caracteres */
+	total = valor.length;
+
+	if(total <= quant) {
+		resto = quant - total;
+		document.getElementById('cont').innerHTML = resto;
+	} else {
+		document.getElementById('texto').value = valor.substr(0,quant);
+	}
+}
+
+</script>
+
+<link href="css/jquery.click-calendario-1.0.css" rel="stylesheet" type="text/css"/>
+
+    <STYLE type="text/css">
+    <!--
+    a:link {text-decoration: none;color: #000099}
+    a:active {text-decoration: none;}
+    a:visited {text-decoration: none;color: #000099}
+    a:hover {text-decoration: underline;color: #000099}
+    .style1 {
+	color: #FF0000;
+	font-style: italic;
+}
+    .style2 {color: #FF0000}
+    </STYLE>
+</head>
+
+<body>
+
+<h4>Seja bem vindo, {USUARIO} || <a href="logout.php">[Sair]</a> ||</h4>
+
+<h1>Editando dados de uma partida &agrave; {SITUACAO} </h1>
+<form action="edita-partida-processa.php" name="altera-partida" method="post">
+<input type="hidden" name="lancamento" value="{LANCAMENTO}" />
+<input type="hidden"  name="situacao" value="{SITUACAO}"/>
+<input type="hidden" name="partida" value="{PARTIDA}" />
+<input type="hidden" name="reduzido_antigo" value="{REDUZIDO}">
+<input type="hidden" name="referencia" value="{REFERENCIA}">
+<input type="hidden" name="complemento_original" value="{COMPLEMENTO}">
+<input type="hidden" name="valor_original" value="{VALOR}">
+<input type="hidden" name="data_original" value="{DATA}">
+<input type="hidden" name="coligada" value="{CODIGOC}">
+<input type="hidden" name="lote" value="{CODLOTE}">
+<input type="hidden" name="opcao" value="{OPCAO}">
+<input type="hidden" name="pesquisa" value="{PESQUISA}">
+
+
+<table width="840" border="1">
+  <tr>
+    <th scope="col"><div align="left">COLIGADA</div></th>
+    <td>{COLIGADA}</td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left">LOTE</div></th>
+    <td>{LOTE}</td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left">CLIENTE</div></th>
+    <td width="620">{CLIENTE}</td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left">DEFAUL {SITUACAO} </div></th>
+    <td>{DEFAULT}</td>
+  </tr>
+  <tr>
+    <th width="204" scope="col"><div align="left">PARTIDA</div></th>
+    <td>{PARTIDA}</td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left">REFER&Ecirc;NCIA</div></th>
+    <td>{REFERENCIA}</td>
+  </tr>
+  <tr>
+    <th width="204" scope="col"><div align="left">CONTA</div></th>
+    <td>{CONTA}</td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">REDUZIDO</div></th>
+    <td>{REDUZIDO}</td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">DESCRI&Ccedil;&Atilde;O</div></th>
+    <td>{DESCRICAO}</td>
+  </tr>
+  <tr>
+    <th scope="row">&nbsp;</th>
+    <td>(caracteres restantes: <span class="style2" id="cont">250</span>)</td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">COMPLEMENTO</div></th>
+    <td>
+		<textarea name="complemento" cols="100" rows="" id="texto" onkeyup="limitaTextarea(this.value)">{COMPLEMENTO}</textarea>	</td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">VALOR</div></th>
+    <td>R$<span class="style2">       
+      <input type="text" name="valor" id="valor" value="{VALOR}" size="40" />
+    </span></td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">DATA</div></th>
+    <td><input type="text" name="data1" id="data1" size="10" value="{DATA}" maxlength="10" />
+      <span class="style1">* Se desejar, informe outra data</span></td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">REDUZIDO CORRETO </div></th>
+    <td><span class="style2">
+      <input type="text" name="reduzido" size="40" />
+      <em>* Se desejar, informe outro c&oacute;digo reduzido</em> </span></td>
+  </tr>
+  <tr>
+    <th scope="row">&nbsp;</th>
+    <td><input type="submit" name="salvar" value="Salvar" />
+      <a href="lista-partidas.php?coligada={CODIGOC}&lancamento={VALORPESQUISA}&opcao={OPCAO}&lote={CODLOTE}"><input type="button" name="voltar" value="Voltar" /></a></td>
+  </tr>
+</table>
+
+</form>
+</body>
+</html>

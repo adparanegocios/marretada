@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Sped - Lista de Produtos</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-style: italic;
+}
+-->
+</style>
+</head>
+<body>
+
+<h4>Seja bem vindo, {USUARIO} || <a href="logout.php">[Sair]</a> ||</h4>
+
+<h1>Lista de Produtos (Sped)</h1>
+
+<div><span class="style1">Se n&atilde;o  for necess&aacute;rio modificar o c&oacute;digo do produto (relacionado aos itens), mas apenas dados do lan&ccedil;amento, basta clicar em uma das op&ccedil;&otilde;es abaixo e na pr&oacute;xima tela modificar apenas os dados referentes ao lan&ccedil;amento, sem editar o c&oacute;digo do produto</span>. </div>
+<br />
+
+<table width="1318" border="1">
+  <tr>
+    <th width="423" scope="col">PRODUTO</th>
+    <th width="135" scope="col">IDENTIFICADOR</th>
+    <th width="59" scope="col">NOTA</th>
+    <th width="113" scope="col">MOVIMENTO</th>
+    <th width="480" scope="col">FORNECEDOR</th>
+    <th width="68" scope="col">VALOR</th>
+  </tr>
+  <!-- BEGIN BLOCK_DADOS -->
+  <tr>
+    <td><a href="sped.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}&produto={IDENTIFICADORPRODUTO}">{PRODUTO}</a></td>
+    <td><a href="sped.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}&produto={IDENTIFICADORPRODUTO}">{IDENTIFICADOR}</a></td>
+    <td><a href="sped.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}&produto={IDENTIFICADORPRODUTO}">{NOTA}</a></td>
+    <td><a href="sped.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}&produto={IDENTIFICADORPRODUTO}">{MOVIMENTO}</a></td>
+    <td><a href="sped.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}&produto={IDENTIFICADORPRODUTO}">{FORNECEDOR}</a></td>
+    <td><a href="sped.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}&produto={IDENTIFICADORPRODUTO}">{VALOR}</a></td>
+  </tr>
+  <!-- END BLOCK_DADOS -->
+</table>
+</body>
+</html>

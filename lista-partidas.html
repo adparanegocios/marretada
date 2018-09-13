@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/lista-partidas.js"></script>
+<title>Lista de Partidas</title>
+<title>Edi&ccedil;&atilde;o de Partida</title>
+    <STYLE type="text/css">
+    <!--
+    a:link {text-decoration: none;color: #000099}
+    a:active {text-decoration: none;}
+    a:visited {text-decoration: none;color: #000099}
+    a:hover {text-decoration: underline;color: #000099}
+    .style1 {
+	color: #FF0000;
+	font-style: italic;
+}
+    </STYLE>
+</head>
+</head>
+<body>
+
+<h4>Seja bem vindo, {USUARIO} || <a href="logout.php">[Sair]</a> ||</h4>
+
+<h1>Lista das partidas de um lan&ccedil;amento </h1>
+
+<form action="lista-partidas.php" name="frm-partida" id="frm-partida" method="post">
+Informe a coligada, por favor: <br />
+<select name="coligada" id="coligada">
+	<option value="" >Selecione uma coligada</option>
+	<!-- BEGIN BLOCK_COLIGADAS -->
+	<option value="{CODIGO}" {SELECIONADO}>{COLIGADA}</option>
+	<!-- END BLOCK_COLIGADAS -->
+</select>
+<br /><br />
+Informe o lote, por favor: <br />
+<select name="lote" id="lote">
+	<option value="">Selecione uma coligada primeiro</option>
+	<!-- BEGIN BLOCK_OPTION_LOTE -->
+	<option value="{VALUE}" {SELECTED_OPCAO}>{TEXT}</option>
+	<!-- END BLOCK_OPTION_LOTE -->
+</select>
+<br /><br />
+Pesquisar por:<br />
+<select name="opcao" id="opcao">
+  <option value="">Selecione uma op&ccedil;&atilde;o</option>
+  <option value="1" {SELECTED_OPCAO1}>Refer&ecirc;ncia da Partida</option>
+  <option value="2" {SELECTED_OPCAO2}>N&uacute;mero do Documento</option>
+</select>
+<input type="text" name="lancamento" id="lancamento" value="{LANCAMENTOCAMPO}" />
+<input type="submit" name="busca" id="pesquisar" value="Pesquisar" />
+</form>
+<span class="style1">Obs: se for feita uma pesquisa por refer&ecirc;ncia da partida e solicitada uma exclus&atilde;o, p&oacute;s ela, o sistema voltar&aacute; a esta tela trazendo um valor de pesquisa no formato exc_n&uacute;mero, exemplo: exc_1000000. &Eacute; normal e se ainda houver partidas relacionadas a que foi exclu&iacute;da ser&atilde;o exibidas. </span><br />
+<br /><br />
+
+<table width="1256" border="1">
+  <tr bgcolor="#999999">
+    <th colspan="12" scope="col">D&Eacute;BITO</th>
+  </tr>
+  <tr>
+    <th width="73" scope="col">LOTE</th>
+    <th width="118" scope="col">PARTIDA</th>
+    <th width="129" scope="col">REFER&Ecirc;NCIA</th>
+    <th width="87" scope="col">VALOR</th>
+    <th width="82" scope="col"><div align="left">DATA</div></th>
+    <th width="156" scope="col">CLIENTE</th>
+    <th width="103" scope="col"><div align="center">DEFAULT</div></th>
+    <th width="89" scope="col"><div align="left">CONTA</div></th>
+    <th width="112" scope="col"><div align="left">REDUZIDO</div></th>
+    <th width="210" scope="col"><div align="left">DESCRI&Ccedil;&Atilde;O</div></th>
+    <th width="27" scope="col">&nbsp;</th>
+  </tr>
+  <!-- BEGIN BLOCK_DEBITO -->
+  <tr>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{LOTE_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{PARTIDA_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{REFERENCIA_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{VALOR_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{DATA_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{CLIENTE_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{DEFAULT_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{CONTA_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{REDUZIDO_D}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&situacao=d&codigo={CODIGO_D}&default={DEFAULT_D}&referencia={REFERENCIA_D}&valor={VALOR_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}">{DESCRICAO_D}</a></td>
+    <td><a href="#" onClick="javascript: if (confirm('Você realmente deseja excluir esta partida?'))location.href='excluir.php?coligada={CODIGOC}&lancamento={LANCAMENTO_D}&partida={PARTIDA_D}&lote={LOTE_D}&opcao={OPCAO_D}&pesquisa={PESQUISA_D}'"><img src="imagem/excluir.jpg"></a>&nbsp;</td>
+  </tr>
+  <!-- END BLOCK_DEBITO -->
+  
+  <tr bgcolor="#999999">
+    <th colspan="12" scope="col">CR&Eacute;DITO</th>
+  </tr>
+  <tr>
+    <th scope="col">LOTE</th>
+    <th scope="col"><div align="left">PARTIDA</div></th>
+    <th scope="col">REFER&Ecirc;NCIA</th>
+    <th scope="col">VALOR</th>
+    <th scope="col"><div align="left">DATA</div></th>
+    <th scope="col">CLIENTE</th>
+    <th scope="col"><div align="center">DEFAULT</div></th>
+    <th scope="col"><div align="left">CONTA</div></th>
+    <th scope="col"><div align="left">REDUZIDO</div></th>
+    <th scope="col"><div align="left">DESCRI&Ccedil;&Atilde;O</div></th>
+    <th scope="col">&nbsp;</th>
+  </tr>
+  <!-- BEGIN BLOCK_CREDITO -->
+  <tr>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{LOTE_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{PARTIDA_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{REFERENCIA_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{VALOR_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{DATA_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{CLIENTE_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{DEFAULT_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{CONTA_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{REDUZIDO_C}</a></td>
+    <td><a href="edita-partida.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&situacao=c&codigo={CODIGO_C}&default={DEFAULT_C}&referencia={REFERENCIA_C}&valor={VALOR_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}">{DESCRICAO_C}</a></td>
+    <td><a href="#" onClick="javascript: if (confirm('Você realmente deseja excluir esta partida?'))location.href='excluir.php?coligada={CODIGOC}&lancamento={LANCAMENTO_C}&partida={PARTIDA_C}&lote={LOTE_C}&opcao={OPCAO_C}&pesquisa={PESQUISA_C}'"><img src="imagem/excluir.jpg"></a>&nbsp;</td>
+  </tr>
+  <!-- END BLOCK_CREDITO -->
+</table>
+</body>
+</html>

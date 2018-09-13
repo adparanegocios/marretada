@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Sped - Lista de Notas</title>
+</head>
+
+<body>
+
+<h4>Seja bem vindo, {USUARIO} || <a href="logout.php">[Sair]</a> ||</h4>
+
+<h1 style="color:red">Pesquisando lan&ccedil;amentos para exclus&atilde;o dos dados fiscais (L&iacute;ber)</h1>
+
+<form action="sped-excluir-fiscal.php" name="frm-sped" id="frm-sped" method="post">
+Informe a coligada abaixo, por favor: <br />
+<select name="coligada" id="coligada">
+	<option value="" >Selecione uma coligada</option>
+	<!-- BEGIN BLOCK_COLIGADAS -->
+	<option value="{CODIGO}" {SELECIONADO}>{COLIGADA}</option>
+	<!-- END BLOCK_COLIGADAS -->
+</select>
+<br /><br />
+Informe um n&uacute;mero de nota  abaixo, preferencialmente com seis d&iacute;gitos (ex.: xxxxxx), por favor:<br />
+<input type="text" name="nota" id="nota" value="{NOTA}" />
+<input type="submit" name="busca" id="busca" value="Buscar" />
+</form>
+<br /><br /><br />
+
+<table width="1221" border="1">
+  <tr>
+    <th width="144" scope="col">IDENTIFICADOR</th>
+    <th width="144" scope="col">NOTA</th>
+    <th width="144" scope="col">MOVIMENTO</th>
+    <th width="585" scope="col">FORNECEDOR</th>
+    <th width="84" scope="col">EMISS&Atilde;O</th>
+    <th width="80" scope="col">DOCUMENTO</th>
+  </tr>
+  <!-- BEGIN BLOCK_DADOS -->
+  <tr>
+    <td><a href="#" onClick="javascript: if (confirm('Deseja excluir o lançamento fiscal da nota {NOTA} do movimento {MOVIMENTO}?'))location.href='sped-excluir-fiscal-processa.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}'" style="color:red">{IDENTIFICADOR}</a></td>
+    <td><a href="#" onClick="javascript: if (confirm('Deseja excluir o lançamento fiscal da nota {NOTA} do movimento {MOVIMENTO}?'))location.href='sped-excluir-fiscal-processa.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}'" style="color:red">{NOTA}</a></td>
+    <td><a href="#" onClick="javascript: if (Deseja excluir o lançamento fiscal da nota {NOTA} do movimento {MOVIMENTO}?'))location.href='sped-excluir-fiscal-processa.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}'" style="color:red">{MOVIMENTO}</a></td>
+    <td><a href="#" onClick="javascript: if (confirm('Deseja excluir o lançamento fiscal da nota {NOTA} do movimento {MOVIMENTO}?'))location.href='sped-excluir-fiscal-processa.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}'" style="color:red">{FORNECEDOR}</a></td>
+    <td><a href="#" onClick="javascript: if (confirm('Deseja excluir o lançamento fiscal da nota {NOTA} do movimento {MOVIMENTO}?'))location.href='sped-excluir-fiscal-processa.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}'" style="color:red">{EMISSAO}</a></td>
+    <td><a href="#" onClick="javascript: if (confirm('Deseja excluir o lançamento fiscal da nota {NOTA} do movimento {MOVIMENTO}?'))location.href='sped-excluir-fiscal-processa.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}'" style="color:red">{DOCUMENTO}</a></td>
+  </tr>  
+  <!-- END BLOCK_DADOS -->
+  
+  <!-- BEGIN BLOCK_VAZIO -->
+  <tr>
+    <td colspan="6" align="center"><strong>Nenhum registro encontrado!</strong></td>
+  </tr>
+  <!-- END	 BLOCK_VAZIO -->
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+Coligada 7: 19/08/2015 10:34:12 - paulo.magno excluiu a partida 999385 do lancamento 990343. Computador: s-rba-totvs-1.gruporba.net. Ip: 10.10.15.63.
+Coligada 7: 19/08/2015 10:34:39 - paulo.magno excluiu a partida 999386 do lancamento 990343. Computador: s-rba-totvs-1.gruporba.net. Ip: 10.10.15.63.
+Coligada 7: 19/08/2015 10:35:09 - paulo.magno excluiu a partida 999383 do lancamento 990342. Computador: s-rba-totvs-1.gruporba.net. Ip: 10.10.15.63.
+Coligada 7: 19/08/2015 10:35:31 - paulo.magno excluiu a partida 999384 do lancamento 990342. Computador: s-rba-totvs-1.gruporba.net. Ip: 10.10.15.63.
+Coligada 7: 29/08/2016 11:00:24 - paulo.magno excluiu a partida 1006704 do lancamento 992574. Computador: 10.10.6.7. Ip: 10.10.6.7.
+Coligada 7: 29/08/2016 11:00:32 - paulo.magno excluiu a partida 1006706 do lancamento 992574. Computador: 10.10.6.7. Ip: 10.10.6.7.
+Coligada 7: 29/08/2016 11:05:01 - paulo.magno excluiu a partida 999472 do lancamento 990380. Computador: 10.10.6.7. Ip: 10.10.6.7.
+Coligada 7: 29/08/2016 11:05:11 - paulo.magno excluiu a partida 999471 do lancamento 990380. Computador: proxy.gruporba.net. Ip: 10.10.15.254.
+Coligada 7: 15/12/2017 15:34:54 - paulo.magno excluiu a partida 1029368 do lancamento 1000845. Computador: 10.10.15.250. Ip: 10.10.15.250.
+Coligada 7: 15/12/2017 15:35:03 - paulo.magno excluiu a partida 1029367 do lancamento 1000845. Computador: 10.10.15.250. Ip: 10.10.15.250.

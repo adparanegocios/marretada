@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Sped - Ajustando Lan&ccedil;amentos</title>
+<script language="javascript" src ="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.click-calendario-1.0-min.js"></script>
+<script language="javascript" src="js/jquery.maskMoney.js"></script>
+<script language="javascript" src="js/edita-sped.js"></script>
+<script>
+
+$(function(){
+ $("#baseicms").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#redicms").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#basetributadaicms").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#aliqicms").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#valoricms").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#isentoicms").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#outrosicms").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#baseipi").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#valoripitributado").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#valoripinaotributado").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#isentoipi").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#outrosipi").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#valorsubstituicao").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+ $(function(){
+ $("#valorcontabil").maskMoney({symbol:'', 
+showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+ });
+ 
+function limitaTextarea(valor) {
+	quant = 250; /* Total de caracteres */
+	total = valor.length;
+
+	if(total <= quant) {
+		resto = quant - total;
+		document.getElementById('cont').innerHTML = resto;
+	} else {
+		document.getElementById('texto').value = valor.substr(0,quant);
+	}
+}
+
+function goBack() {
+    window.location.href = 'sped-lista-produto.php?coligada={COLIGADA}&identificador={IDENTIFICADOR}';
+}
+
+function formatar(mascara, documento){
+	var i = documento.value.length;
+	var saida = mascara.substring(0,1);
+	var texto = mascara.substring(i)
+	if (texto.substring(0,1) != saida){
+		documento.value += texto.substring(0,1);
+	}
+}
+
+</script>
+<link href="css/jquery.click-calendario-1.0.css" rel="stylesheet" type="text/css"/>
+
+    <STYLE type="text/css">
+    <!--
+    a:link {text-decoration: none;color: #000099}
+    a:active {text-decoration: none;}
+    a:visited {text-decoration: none;color: #000099}
+    a:hover {text-decoration: underline;color: #000099}
+    .style1 {
+	color: #FF0000;
+	font-style: italic;
+}
+    .style2 {color: #FF0000}
+    </STYLE>
+	
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+.style2 {font-style: italic}
+.style3 {
+	color: #333333;
+	font-style: italic;
+}
+.style4 {	color: #FF0000;
+	font-style: italic;
+}
+.style4 {color: #FF0000}
+.style5 {
+	color: #0000FF;
+	font-style: italic;
+}
+.style7 {color: #000000}
+-->
+</style>
+</head>
+
+<body>
+
+<h4>Seja bem vindo, {USUARIO} || <a href="logout.php">[Sair]</a> ||</h4>
+
+<h1>Ajustando Lan&ccedil;amentos (Sped)</h1>
+
+<form action="sped-processa.php" name="frm-sped" id="frm-sped" method="post">
+
+<input type="hidden" name="coligada" id="coligada" value="{COLIGADA}" />
+<input type="hidden" name="identificador" id="identificador" value="{IDENTIFICADOR}" />
+<input type="hidden" name="movimento" id="movimento" value="{MOVIMENTO}" />
+<input type="hidden" name="entrada_banco" id="entrada_banco" value="{ENTRADA}" />
+<input type="hidden" name="codnat_banco" id="codnat_banco" value="{CODNATUREZA}" />
+<input type="hidden" name="identificadorproduto" id="identificadorproduto" value="{IDENTIFICADORPRODUTO}" />
+<input type="hidden" name="tipohistorico" id="tipohistorico" value="{TIPOHISTORICO}" />
+
+<table width="934" border="1">
+  <tr>
+    <th scope="col"><div align="left">COLIGADA</div></th>
+    <td colspan="3">{NOMECOLIGADA}</td>
+  </tr>
+  <tr>
+    <th width="260" scope="col"><div align="left">IDENTIFICADOR</div></th>
+    <td colspan="3">{IDENTIFICADOR}</td>
+  </tr>
+  <tr>
+    <th width="260" scope="col"><div align="left">NOTA</div></th>
+    <td colspan="3">{NOTA}</td>
+  </tr>
+  <tr>
+    <th width="260" scope="col"><div align="left">MOVIMENTO</div></th>
+    <td colspan="3">{MOVIMENTO} ({MOVIMENTOORIGINAL}) </td>
+  </tr>
+  
+  <tr>
+    <th width="260" scope="col"><div align="left">VALOR</div></th>
+    <td colspan="3">{VALOR}</td>
+  </tr>
+  
+  <tr>
+    <th colspan="4" scope="col"><strong>DADOS RELACIONADOS AO MOVIMENTO (NUCLUES) </strong></th>
+    </tr>
+  <tr>
+    <th width="260" scope="col"><div align="left" class="style2">EMISS&Atilde;O</div></th>
+    <td colspan="3"><input type="text" name="emissao" id="emissao" size="10" value="{EMISSAO}" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left"><span class="style4">DATA DE ENTRADA </span></div></th>
+    <td colspan="3"><input type="text" name="entrada" id="entrada" size="10" value="{ENTRADA}" maxlength="10" /> 
+      <span class="style5">Obs: alterar a data de entrada tamb&eacute;m altera a Data LF do lan&ccedil;amento fiscal. </span></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style1">TIPO DE DOCUMENTO </div></th>
+    <td colspan="3"><input type="text" name="documento" id="documento" value="{DOCUMENTO}" /></td>
+  </tr>
+  <tr>
+    <th width="260" scope="col"><div align="left" class="style1">CHAVE DE ACESSO </div></th>
+    <td colspan="3"><input type="text" name="chave" id="chave" value="{CHAVE}" size="60" /></td>
+  </tr>  
+  <tr>
+    <th width="260" scope="col"><div align="left" class="style1">C&Oacute;DIGO DO FORNECEDOR </div></th>
+    <td colspan="3"><input type="text" name="codigo" id="codigo" value="{CODIGO}" size="20" />    
+      {FORNECEDOR}</td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left"><span class="style4"><em><strong>C&Oacute;DIGO DO PRODUTO </strong></em></span></div></th>
+    <td colspan="3"><input name="codigoproduto" type="text" id="codigoproduto" OnKeyPress="formatar('##.##.####', this)" onClick="this.value=''"value="{CODIGOPRODUTO}" size="10" maxlength="10" />
+      {PRODUTO}</td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style4"><em>C&Oacute;DIGO DA NATUREZA </em></div></th>
+    <td colspan="3"><input name="codnatureza" type="text" id="codnatureza" onclick="this.value=''" onkeypress="formatar('#.###.##', this)" value="{CODNATUREZA}" size="8" maxlength="8" />
+    {NATUREZA}</td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style4"><em>N&Uacute;MERO DI </em></div></th>
+    <td colspan="3"><input type="text" name="di" id="di" value="{DI}" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left"><span class="style4"><em>HIST&Oacute;RICO</em></span></div></th>
+    <td colspan="3"><textarea name="historico" id="historico" cols="120" rows="5">{HISTORICO}</textarea></td>
+  </tr>
+  <tr>
+    <th colspan="4" scope="col">DADOS RELACIONADOS AO LAN&Ccedil;AMENTO FISCAL (LIBER) </th>
+    </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style4"><em>BASE ICMS </em></div></th>
+    <td><input type="text" name="baseicms" id="baseicms" value="{BASEICMS}" size="20" /></td>
+    <td><div align="left" class="style4"><em><strong>BASE IPI </strong></em></div></td>
+    <td><input type="text" name="baseipi" id="baseipi" value="{BASEIPI}" size="20" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style7">% RED. ICMS </div></th>
+    <td><input type="text" name="redicms" id="redicms" value="{REDICMS}" size="20" disabled="disabled" readonly="readonly" /></td>
+    <td><div align="left" class="style4"><em><strong>VALOR IPI: TRIBUTADO </strong></em></div></td>
+    <td><input type="text" name="valoripitributado" id="valoripitributado" value="{VALORIPITRIBUTADO}" size="20" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style4"><em>BASE TRIBUTADA ICMS </em></div></th>
+    <td><input type="text" name="basetributadaicms" id="basetributadaicms" value="{BASETRIBUTADAICMS}" size="20" /></td>
+    <td><div align="left" class="style4"><em><strong>VALOR IPI: N&Atilde;O TRIBUTADO </strong></em></div></td>
+    <td><input type="text" name="valoripinaotributado" id="valoripinaotributado" value="{VALORIPINAOTRIBUTADO}" size="20" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style7">ALIQ. ICMS </div></th>
+    <td><input type="text" name="aliqicms" id="aliqicms" value="{ALIQICMS}" size="20" disabled="disabled" readonly="readonly" /></td>
+    <td><div align="left" class="style4"><em><strong>ISENTO IPI </strong></em></div></td>
+    <td><input type="text" name="isentoipi" id="isentoipi" value="{ISENTOIPI}" size="20" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style4"><em>VALOR ICMS </em></div></th>
+    <td><input type="text" name="valoricms" id="valoricms" value="{VALORICMS}" size="20" /></td>
+    <td><div align="left" class="style4"><em><strong>OUTROS IPI </strong></em></div></td>
+    <td><input type="text" name="outrosipi" id="outrosipi" value="{OUTROSIPI}" size="20" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style4"><em>ISENTO ICMS </em></div></th>
+    <td><input type="text" name="isentoicms" id="isentoicms" value="{ISENTOICMS}" size="20" /></td>
+    <td><div align="left" class="style4"><em><strong>VALOR SUBSTITUI&Ccedil;&Atilde;O </strong></em></div></td>
+    <td><input type="text" name="valorsubstituicao" id="valorsubstituicao" value="{VALORSUBSTITUICAO}" size="20" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><div align="left" class="style4"><em>OUTROS ICMS </em></div></th>
+    <td width="120"><input type="text" name="outrosicms" id="outrosicms" value="{OUTROSICMS}" size="20" /></td>
+    <td width="405"><div align="left" class="style4"><em><strong>VALOR CONT&Aacute;BIL </strong></em></div></td>
+    <td width="121"><input type="text" name="valorcontabil" id="valorcontabil" value="{VALORCONTABIL}" size="20" /></td>
+  </tr>
+  <tr>
+    <th scope="col"><span class="style3">Em vermelho campos edit&aacute;veis </span></th>
+    <td colspan="3"><input type="submit" name="salvar" id="salvar" value="Salvar" />
+      <input type="button" name="voltar" id="voltar" value="Voltar" onclick='goBack()' /></td>
+  </tr>
+</table>
+</form>
+
+</body>
+
+</html>
