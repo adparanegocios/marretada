@@ -11,7 +11,7 @@ define ( 'USER_BANCO', 'sa' );
 define ( 'PASS_BANCO', 'RBA13#' );
 define ( 'NAME_BANCO', 'CORPORERM' );
 
-define ( 'HOST_EMAIL', 'mail.rbadecomunicacao.com.br' );
+define ( 'HOST_EMAIL', 'mail.gruporba.com.br' );
 define ( 'USER_EMAIL', 'rm@rbadecomunicacao.com.br' );
 define ( 'PASS_EMAIL', 'RBA13#' );
 define ( 'PORT_EMAIL', '25' );
