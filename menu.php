@@ -142,9 +142,10 @@ function horizontal() {
                           </ul>
                        </li>  
                        
-                       <li class="submenu"><a href="#">Faturamento</a>
+                       <li class="submenu"><a href="#">Mudan&ccedil;a de Ambiente</a>
                           <ul class="menu">
-                           	<li><a href="<?=PATH;?>faturamento-ambiente.php">Mudan&ccedil;a de Ambiente</a></li>    	
+                           	<li><a href="<?=PATH;?>faturamento-ambiente.php">Faturamento</a></li>
+                            <li><a href="<?=PATH;?>compras-ambiente.php">Compras</a></li>    	
                           </ul>
                        </li>
                        

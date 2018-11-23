@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/compras-ambiente.js"></script>
+<title>Configura&ccedil;&atilde;o de ambiente - COMPRAS</title>
+<title>Edi&ccedil;&atilde;o de Partida</title>
+    <STYLE type="text/css">
+    <!--
+    a:link {text-decoration: none;color: #000099}
+    a:active {text-decoration: none;}
+    a:visited {text-decoration: none;color: #000099}
+    a:hover {text-decoration: underline;color: #000099}
+    .style1 {
+	color: #FF0000;
+	font-style: italic;
+}
+    .style3 {
+	color: #FF0000;
+	font-weight: bold;
+}
+    </STYLE>
+</head>
+</head>
+<body>
+
+<h4>Seja bem vindo, {USUARIO} || <a href="logout.php">[Sair]</a> ||</h4>
+
+<h1>Configura&ccedil;&atilde;o de ambiente - COMPRAS </h1>
+
+<span class="style1">Obs: MOVIMENTOS EM VERMELHO J&Aacute; EST&Atilde;O EM EDI&Ccedil;&Atilde;O. </span><br />
+<br />
+
+<form action="compras-ambiente-processa.php" name="frm-ambiente" id="frm-ambiente" method="post">
+Escolha a coligada: <br />
+<select name="coligada" id="coligada">
+	<option value="" >Selecione uma coligada</option>
+	<!-- BEGIN BLOCK_COLIGADAS -->
+	<option value="{CODIGO}" {SELECIONADO}>{COLIGADA}</option>
+	<!-- END BLOCK_COLIGADAS -->
+</select>
+<hr />
+Escolha os movimentos:
+<div id="movimentos"></div>
+<hr />
+
+Escolha o ambiente:
+<p><strong>PRODU&Ccedil;&Atilde;O</strong>
+  <input name="ambiente" type="radio" value="1"> 
+  <span class="style3">EDI&Ccedil;&Atilde;O</span>
+  <input name="ambiente" type="radio" value="2">
+</p>
+<p>
+  <input type="submit" name="salvar" value="Salvar">
+</p>
+</form>
+
+</body>
+</html>
